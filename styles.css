@@ -630,14 +630,15 @@ h1 em {
 .review-grid {
   display: grid;
   gap: 20px;
-  grid-auto-columns: minmax(280px, calc((100% - 40px) / 3));
-  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
   margin: 36px 0 40px;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  padding: 0 0 18px;
-  scroll-padding-inline: 2px;
-  scroll-snap-type: inline proximity;
+  max-height: 620px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  padding: 0 12px 12px 0;
+  scroll-padding-block: 2px;
+  scroll-snap-type: y proximity;
   scrollbar-color: #d8cce8 rgba(255, 255, 255, 0.18);
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
@@ -649,7 +650,7 @@ h1 em {
 }
 
 .review-grid::-webkit-scrollbar {
-  height: 8px;
+  width: 8px;
 }
 
 .review-grid::-webkit-scrollbar-track {
@@ -928,12 +929,13 @@ h1 em {
     margin-bottom: 26px;
   }
 
-  .activity-grid {
+  .activity-grid,
+  .review-grid {
     grid-template-columns: 1fr;
   }
 
   .review-grid {
-    grid-auto-columns: 88%;
+    max-height: 640px;
   }
 
   .learning-card {
