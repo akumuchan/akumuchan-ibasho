@@ -23,6 +23,77 @@
   <meta name="theme-color" content="#eee8f7">
   <title>悪夢ちゃん〜みんなのいばしょ〜｜傾聴活動</title>
   <link rel="stylesheet" href="styles.css?v=20260726-reviews-vertical-final">
+  <style>
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      margin: 48px auto 0;
+      max-width: 900px;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+      padding: 22px 58px 22px 24px;
+      position: relative;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      color: var(--purple);
+      content: "＋";
+      font-size: 24px;
+      font-weight: 400;
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item summary:focus-visible {
+      outline: 3px solid #d4b9ee;
+      outline-offset: -3px;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      margin: 0;
+      padding: 0 24px 22px;
+    }
+
+    @media (max-width: 850px) {
+      .faq-list {
+        margin-top: 36px;
+      }
+
+      .faq-item summary {
+        padding: 18px 52px 18px 18px;
+      }
+
+      .faq-item summary::after {
+        right: 18px;
+      }
+
+      .faq-item p {
+        padding: 0 18px 18px;
+      }
+    }
+  </style>
   <script src="script.js" defer></script>
   <script type="application/ld+json">
   {
@@ -351,6 +422,40 @@
       </div>
     </section>
 
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading section-heading-center">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">よくある質問</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>利用料金はかかりますか？</summary>
+          <p>いいえ、30分・45分のどちらの予約枠も無料です。ただし、利用に必要なインターネット接続料・通信料は利用者の負担となります。</p>
+        </details>
+        <details class="faq-item">
+          <summary>どのような話でも大丈夫ですか？</summary>
+          <p>うれしかったこと、つらかったこと、寂しい気持ちなど、誰かに話したいことをあなたのペースでお話しください。命の危険や自傷・他害のおそれなど、緊急の対応が必要な場合には対応できません。</p>
+        </details>
+        <details class="faq-item">
+          <summary>うまく話せなくても利用できますか？</summary>
+          <p>はい、大丈夫です。言葉がまとまらないときや、途中で沈黙する時間も含めて、無理に急がずにお待ちします。</p>
+        </details>
+        <details class="faq-item">
+          <summary>予約方法と利用時間を教えてください</summary>
+          <p><a href="https://tol-app.jp/s/beafnc6ts30tqtcwfguv" target="_blank" rel="noopener noreferrer">無料予約ページ</a>から、30分または45分の枠をお選びください。空き状況と対応時間も予約ページで確認できます。</p>
+        </details>
+        <details class="faq-item">
+          <summary>話した内容や個人情報は守られますか？</summary>
+          <p>お話の内容と個人情報は慎重に取り扱い、本人の同意なく公開・第三者提供しません。ただし、法令に基づく場合や、生命・身体の保護のため緊急に必要な場合を除きます。</p>
+        </details>
+        <details class="faq-item">
+          <summary>医療やカウンセリングとは何が違いますか？</summary>
+          <p>本活動は、専門資格に基づく医療・心理・法律などの専門的支援ではなく、お話を聴くことを目的とする無料の傾聴活動です。診断、治療、心理療法、法律相談、緊急対応は行いません。必要に応じて医療機関や公的相談窓口をご利用ください。</p>
+        </details>
+      </div>
+    </section>
+
     <section class="section about" id="safety" aria-labelledby="safety-title">
       <div class="section-heading">
         <p class="eyebrow">IMPORTANT GUIDE</p>
@@ -413,7 +518,7 @@
       </span>
     </a>
     <p>傾聴活動・あなたの言葉を、そのまま受け止めます。</p>
-    <p><a href="#booking">無料予約</a> ・ <a href="#support">応援</a> ・ <a href="#learning">資格・勉強記録</a> ・ <a href="#safety">利用にあたって・個人情報の取り扱い</a></p>
+    <p><a href="#booking">無料予約</a> ・ <a href="#support">応援</a> ・ <a href="#faq">よくある質問</a> ・ <a href="#learning">資格・勉強記録</a> ・ <a href="#safety">利用にあたって・個人情報の取り扱い</a></p>
     <small>© 悪夢ちゃん〜みんなのいばしょ〜</small>
   </footer>
 </body>
