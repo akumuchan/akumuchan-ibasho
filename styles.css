@@ -458,6 +458,31 @@ h1 em {
 .learning-cards {
   display: grid;
   gap: 20px;
+  max-height: 720px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 12px;
+  scrollbar-color: var(--purple) var(--lavender-soft);
+  scrollbar-width: thin;
+}
+
+.learning-cards:focus-visible {
+  outline: 3px solid #d4b9ee;
+  outline-offset: 6px;
+}
+
+.learning-cards::-webkit-scrollbar {
+  width: 8px;
+}
+
+.learning-cards::-webkit-scrollbar-track {
+  background: var(--lavender-soft);
+  border-radius: 999px;
+}
+
+.learning-cards::-webkit-scrollbar-thumb {
+  background: var(--purple);
+  border-radius: 999px;
 }
 
 .learning-card {
