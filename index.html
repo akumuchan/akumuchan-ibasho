@@ -166,6 +166,315 @@
         grid-template-columns: 1fr;
       }
     }
+
+
+    /* Soft design refinements — existing color palette retained */
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
+    }
+
+    .hero {
+      border-radius: 0 0 48px 48px;
+      box-shadow: 0 18px 50px rgba(94, 74, 129, 0.10);
+    }
+
+    .reviews,
+    .contact {
+      border-radius: 48px;
+    }
+
+    .notice,
+    .payment-example,
+    .learning-card,
+    .activity-card,
+    .review-card,
+    .review-cta,
+    body .price-card,
+    body .faq-item {
+      border-radius: 24px;
+      box-shadow: 0 12px 32px rgba(94, 74, 129, 0.09);
+    }
+
+    .learning-card,
+    .activity-card,
+    .review-card,
+    body .price-card,
+    body .faq-item {
+      transition: box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .button {
+      min-height: 52px;
+    }
+
+    .button-primary {
+      box-shadow: 0 12px 30px rgba(94, 74, 129, 0.20);
+    }
+
+    .learning-card a,
+    .faq-item a,
+    .about-copy a {
+      overflow-wrap: anywhere;
+    }
+
+    .learning-cards,
+    .review-grid {
+      scrollbar-gutter: stable;
+    }
+
+    @media (hover: hover) {
+      .learning-card:hover,
+      .activity-card:hover,
+      .review-card:hover,
+      body .price-card:hover,
+      body .faq-item:hover {
+        box-shadow: 0 18px 38px rgba(94, 74, 129, 0.13);
+        transform: translateY(-3px);
+      }
+    }
+
+    @media (max-width: 850px) {
+      body {
+        line-height: 1.8;
+      }
+
+      .site-header {
+        height: 68px;
+        padding: 0 16px;
+      }
+
+      .menu-button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 9px;
+        place-content: center;
+      }
+
+      .nav {
+        max-height: calc(100svh - 68px);
+        padding: 12px 16px 20px;
+        top: 68px;
+      }
+
+      .nav a {
+        font-size: 15px;
+        padding: 15px 8px;
+      }
+
+      .hero {
+        border-radius: 0 0 32px 32px;
+        padding: 52px 20px 48px;
+      }
+
+      h1 {
+        font-size: clamp(28px, 8.2vw, 34px);
+        letter-spacing: 0.02em;
+        line-height: 1.55;
+      }
+
+      h1 em {
+        white-space: nowrap;
+      }
+
+      .hero-lead {
+        font-size: 15px;
+        line-height: 1.9;
+        margin-top: 24px;
+      }
+
+      .hero-actions {
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .hero-actions .button,
+      .hero-actions .text-link {
+        max-width: 100%;
+      }
+
+      .button {
+        font-size: 15px;
+        min-width: 0;
+        padding: 14px 20px;
+      }
+
+      .section {
+        padding: 64px 18px;
+      }
+
+      .eyebrow {
+        letter-spacing: 0.2em;
+        margin-bottom: 16px;
+      }
+
+      .section-heading h2,
+      .learning-heading h2,
+      .profile-copy h2,
+      .review-summary h2,
+      .contact h2 {
+        font-size: clamp(30px, 9vw, 38px);
+        line-height: 1.45;
+      }
+
+      .about,
+      .profile,
+      .learning-layout {
+        gap: 32px;
+      }
+
+      .about-copy > p,
+      .profile-copy > p {
+        font-size: 15px;
+        line-height: 1.9;
+      }
+
+      .notice {
+        align-items: flex-start;
+        gap: 14px;
+        padding: 20px 18px;
+      }
+
+      .learning-cards {
+        gap: 14px;
+        max-height: min(70svh, 620px);
+        padding-right: 6px;
+        scrollbar-gutter: auto;
+      }
+
+      .learning-card {
+        border-radius: 20px;
+        padding: 24px 20px;
+      }
+
+      .activity-grid {
+        gap: 14px;
+        margin-top: 36px;
+      }
+
+      .activity-card {
+        border-radius: 20px;
+        padding: 26px 22px;
+      }
+
+      .activity-card h3 {
+        font-size: 23px;
+        margin: 20px 0 12px;
+      }
+
+      .review-summary {
+        gap: 24px;
+      }
+
+      .review-history-note {
+        line-height: 1.75;
+        margin-top: 24px;
+      }
+
+      .review-grid {
+        gap: 14px;
+        margin: 28px 0 32px;
+        max-height: 70svh;
+        padding: 0 6px 8px 0;
+        scrollbar-gutter: auto;
+      }
+
+      .review-card {
+        border-radius: 20px;
+        min-height: 0;
+        padding: 24px 20px;
+      }
+
+      .review-card p {
+        font-size: 15px;
+        line-height: 1.85;
+        margin: 12px 0 24px;
+      }
+
+      .review-cta {
+        border-radius: 20px;
+        gap: 24px;
+        margin-top: 40px;
+        padding: 26px 20px;
+      }
+
+      .service-pricing {
+        gap: 10px;
+        margin: 28px auto 20px;
+      }
+
+      body .price-card {
+        border-radius: 18px;
+        padding: 20px 14px;
+      }
+
+      body .price-card strong {
+        font-size: 28px;
+      }
+
+      .payment-example {
+        border-radius: 18px;
+        padding: 20px 18px;
+      }
+
+      body .faq-list {
+        gap: 10px;
+        margin-top: 32px;
+      }
+
+      body .faq-item {
+        border-radius: 18px;
+      }
+
+      body .faq-item summary {
+        font-size: 15px;
+        line-height: 1.65;
+        padding: 18px 50px 18px 18px;
+      }
+
+      body .faq-item p {
+        font-size: 14px;
+        line-height: 1.85;
+        padding: 0 18px 18px;
+      }
+
+      .contact > p:not(.eyebrow) {
+        font-size: 14px;
+        line-height: 1.85;
+        margin-bottom: 28px;
+      }
+
+      .footer {
+        gap: 20px;
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .brand-name small {
+        display: none;
+      }
+
+      .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .review-count strong {
+        font-size: 54px;
+      }
+    }
+
   </style>
   <script src="script.js" defer></script>
   <script type="application/ld+json">
