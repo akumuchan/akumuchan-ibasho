@@ -475,6 +475,136 @@
       }
     }
 
+    /* メール傾聴フォーム */
+    .mail-listening {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.92), transparent 34%),
+        linear-gradient(145deg, #f6f0fb 0%, #eee5f8 100%);
+    }
+
+    .mail-form-layout {
+      align-items: start;
+      display: grid;
+      gap: 48px;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      margin: 0 auto;
+      max-width: 1080px;
+    }
+
+    .mail-form-copy h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.45;
+      margin: 0 0 24px;
+    }
+
+    .mail-form-copy > p:not(.eyebrow) {
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .mail-form-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 18px 42px rgba(94, 74, 129, 0.13);
+      padding: 34px;
+    }
+
+    .mail-form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-field > span {
+      color: var(--purple-dark);
+      font-weight: 700;
+    }
+
+    .form-field small {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-sizing: border-box;
+      color: inherit;
+      font: inherit;
+      line-height: 1.7;
+      padding: 14px 16px;
+      width: 100%;
+    }
+
+    .form-field textarea {
+      min-height: 190px;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(147, 112, 184, 0.17);
+      outline: none;
+    }
+
+    .form-consent {
+      align-items: flex-start;
+      color: var(--muted);
+      display: flex;
+      font-size: 14px;
+      gap: 10px;
+      line-height: 1.75;
+    }
+
+    .form-consent input {
+      flex: 0 0 auto;
+      height: 18px;
+      margin-top: 4px;
+      width: 18px;
+    }
+
+    .form-privacy {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .mail-form .button {
+      border: 0;
+      cursor: pointer;
+      justify-self: start;
+    }
+
+    @media (max-width: 850px) {
+      .mail-form-layout {
+        gap: 32px;
+        grid-template-columns: 1fr;
+      }
+
+      .mail-form-card {
+        border-radius: 22px;
+        padding: 26px 22px;
+      }
+
+      .mail-form-copy h2 {
+        font-size: clamp(29px, 8.5vw, 38px);
+      }
+
+      .mail-form .button {
+        justify-self: stretch;
+        width: 100%;
+      }
+    }
+
   </style>
   <script src="script.js" defer></script>
   <script type="application/ld+json">
@@ -513,6 +643,7 @@
       <a href="#learning">資格・勉強記録</a>
       <a href="#reviews">みんなの感想</a>
       <a href="#contact-options">連絡方法</a>
+      <a href="#mail-listening">メール傾聴</a>
       <a href="#support">活動の応援</a>
       <a href="#safety">利用にあたって</a>
       <a href="#contact">お話ししたい方へ</a>
@@ -529,7 +660,7 @@
           「悪夢ちゃん」は、あなたの声にそっと耳を傾ける無料の傾聴ボランティアです。
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#contact-options">電話・公式LINEを見る</a>
+          <a class="button button-primary" href="#contact-options">連絡方法を見る</a>
           <a class="text-link" href="#about">活動について見る <span aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -831,12 +962,13 @@
       <h2 id="contact-options-title">無料の傾聴・ご連絡方法</h2>
       <p>
         この活動は、ボランティアとして無料でお話を聴くものです。
-        お話ししたい方は、電話または公式LINEからご連絡ください。
+        お話ししたい方は、電話・公式LINE・メールフォームからご連絡ください。
       </p>
       <p class="scope-note"><strong>利用料金はかかりません。活動はすべて無料です。</strong></p>
       <div class="hero-actions">
         <a class="button button-primary" href="tel:08048417194" aria-label="080-4841-7194へ電話">電話する</a>
         <a class="button review-write-button" href="https://line.me/R/ti/p/@321frdrq" target="_blank" rel="noopener noreferrer">公式LINEで連絡する</a>
+        <a class="button review-write-button" href="#mail-listening">メールで相談する</a>
       </div>
       <p class="scope-note"><strong>電話番号：080-4841-7194</strong></p>
       <p class="scope-note">※ ご連絡は24時間受け付けていますが、すぐに対応・返信できない場合があります。</p>
@@ -938,7 +1070,8 @@
           本人の同意がある場合、法令に基づく場合、または生命・身体の保護のため緊急に必要な場合を除き、第三者へ提供しません。
         </p>
         <p>
-          感想フォームには「フォームメーラー」、連絡には公式LINE・Xなどの外部サービスを利用します。
+          感想フォームには「フォームメーラー」、メール傾聴フォームには「FormSubmit」、連絡には公式LINE・Xなどの外部サービスを利用します。
+          メール傾聴フォームに入力した内容はFormSubmitを経由して送信され、FormSubmit側で最大30日間保存される可能性があります。
           入力・送信前に各サービスの利用規約・プライバシーポリシーもご確認ください。
           取得した情報は利用目的の達成に必要な期間、安全に管理し、不要となった後に削除します。
         </p>
@@ -958,15 +1091,78 @@
       </div>
     </section>
 
+    <section class="section mail-listening" id="mail-listening" aria-labelledby="mail-listening-title">
+      <div class="mail-form-layout">
+        <div class="mail-form-copy">
+          <p class="eyebrow">EMAIL LISTENING</p>
+          <h2 id="mail-listening-title">声にしにくい気持ちも、<br>文章で大丈夫です。</h2>
+          <p>
+            電話ではうまく話せない方や、文章でゆっくり気持ちを伝えたい方へ。
+            まとまっていなくても、短い言葉だけでも大丈夫です。
+            原則24〜48時間以内を目安に、メールでお返事します。
+          </p>
+          <div class="notice">
+            <span aria-hidden="true">☾</span>
+            <p>
+              <strong>無料のメール傾聴です</strong>
+              医療・心理カウンセリングではなく、診断・治療・緊急対応は行いません。
+              命の危険や自傷・他害のおそれがある場合は、119番・110番や公的相談窓口をご利用ください。
+            </p>
+          </div>
+        </div>
+
+        <div class="mail-form-card">
+          <form class="mail-form" action="https://formsubmit.co/akumuchan0505@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="メール傾聴フォームから新しい相談が届きました">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+            <label class="form-field">
+              <span>お名前・ニックネーム <small>（匿名可）</small></span>
+              <input type="text" name="お名前・ニックネーム" maxlength="100" autocomplete="name" placeholder="匿名でも大丈夫です">
+            </label>
+
+            <label class="form-field">
+              <span>返信用メールアドレス <small>（必須）</small></span>
+              <input type="email" name="email" maxlength="254" autocomplete="email" inputmode="email" placeholder="example@email.com" required>
+            </label>
+
+            <label class="form-field">
+              <span>お話ししたいこと <small>（必須）</small></span>
+              <textarea name="お話ししたいこと" maxlength="5000" rows="8" placeholder="文章がまとまっていなくても大丈夫です。今の気持ちを、書ける範囲でお送りください。" required></textarea>
+            </label>
+
+            <label class="form-consent">
+              <input type="checkbox" name="注意事項への同意" value="同意しました" required>
+              <span>
+                この活動は医療・心理カウンセリングではなく、緊急対応はできないこと、
+                および入力内容が外部サービス「FormSubmit」を経由して送信されることに同意します。
+              </span>
+            </label>
+
+            <p class="form-privacy">
+              お名前・メールアドレス・相談内容は、返信のために利用します。
+              入力内容はFormSubmitを経由して運営者のGmailへ届き、FormSubmit側で最大30日間保存される可能性があります。
+            </p>
+
+            <button class="button button-primary" type="submit">メールで相談する</button>
+            <p class="form-privacy">※ 送信時に迷惑送信防止の確認画面が表示される場合があります。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section class="section contact" id="contact">
       <span class="contact-moon" aria-hidden="true">☾</span>
       <p class="eyebrow">CONTACT</p>
       <h2>ひとりで抱えずに、<br>あなたの言葉を聴かせてください。</h2>
-      <p>お話ししたい方は、電話または公式LINEからご連絡ください。すぐに対応・返信できない場合があります。緊急の連絡先としては利用できません。</p>
+      <p>お話ししたい方は、電話・公式LINE・メールフォームからご連絡ください。すぐに対応・返信できない場合があります。緊急の連絡先としては利用できません。</p>
       <p><strong>電話番号：</strong> <a class="text-link" href="tel:08048417194" aria-label="080-4841-7194へ電話">080-4841-7194</a></p>
       <div class="hero-actions">
         <a class="button button-primary" href="tel:08048417194" aria-label="080-4841-7194へ電話">電話する</a>
         <a class="button review-write-button" href="https://line.me/R/ti/p/@321frdrq" target="_blank" rel="noopener noreferrer">公式LINEで連絡する</a>
+        <a class="button review-write-button" href="#mail-listening">メールで相談する</a>
       </div>
       <a class="text-link" href="https://x.com/akumuchan0505" target="_blank" rel="noopener noreferrer">公式Xを見る <span aria-hidden="true">→</span></a>
     </section>
@@ -981,7 +1177,7 @@
       </span>
     </a>
     <p>無料の傾聴ボランティア・あなたの言葉を、そのまま受け止めます。</p>
-    <p><a href="#contact-options">電話・公式LINE</a> ・ <a href="#support">活動の応援</a> ・ <a href="#faq">よくある質問</a> ・ <a href="#learning">資格・勉強記録</a> ・ <a href="#safety">利用にあたって・個人情報の取り扱い</a></p>
+    <p><a href="#contact-options">電話・公式LINE</a> ・ <a href="#mail-listening">メール傾聴</a> ・ <a href="#support">活動の応援</a> ・ <a href="#faq">よくある質問</a> ・ <a href="#learning">資格・勉強記録</a> ・ <a href="#safety">利用にあたって・個人情報の取り扱い</a></p>
     <small>© 悪夢ちゃん〜みんなのいばしょ〜</small>
   </footer>
 </body>
