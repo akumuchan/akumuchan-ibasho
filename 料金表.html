@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="時間帯別の料金表">
+  <title>料金表</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17304f;
+      --muted: #607087;
+      --line: #dbe4ee;
+      --day: #1476c8;
+      --day-soft: #edf7ff;
+      --night: #49377e;
+      --night-soft: #f4f0ff;
+      --video: #087f6b;
+      --video-soft: #eafaf5;
+      --paper: rgba(255, 255, 255, 0.92);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+      color: var(--ink);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, #dff3ff 0, transparent 38%),
+        radial-gradient(circle at 100% 100%, #ece5ff 0, transparent 42%),
+        #f5f8fb;
+    }
+
+    main {
+      width: min(920px, 100%);
+      padding: clamp(28px, 5vw, 56px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 32px;
+      background: var(--paper);
+      box-shadow: 0 24px 70px rgba(28, 52, 80, 0.12);
+      backdrop-filter: blur(8px);
+    }
+
+    header { text-align: center; }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--day);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      letter-spacing: 0.08em;
+    }
+
+    .lead {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .plan {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+    }
+
+    .plan-header {
+      padding: 24px 26px 20px;
+    }
+
+    .day .plan-header { background: var(--day-soft); }
+    .night .plan-header { background: var(--night-soft); }
+    .video .plan-header { background: var(--video-soft); }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 8px;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .label::before {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .day .label { color: var(--day); }
+    .night .label { color: var(--night); }
+    .video .label { color: var(--video); }
+
+    .video { grid-column: 1 / -1; }
+
+    .video .price-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+    }
+
+    .video .price-list li:last-child { border-bottom: 1px solid var(--line); }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 4vw, 2rem);
+      letter-spacing: 0.04em;
+    }
+
+    .price-list {
+      margin: 0;
+      padding: 0 26px;
+      list-style: none;
+    }
+
+    .price-list li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .price-list li:last-child { border-bottom: 0; }
+
+    .duration {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .price {
+      color: var(--ink);
+      font-size: clamp(1.35rem, 4vw, 1.8rem);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .free { color: var(--day); }
+
+    @media (max-width: 680px) {
+      body { padding: 20px 14px; }
+      main { padding: 30px 18px; border-radius: 24px; }
+      .plans { grid-template-columns: 1fr; margin-top: 30px; }
+      .video { grid-column: auto; }
+      .video .price-list { display: block; }
+      .video .price-list li:last-child { border-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">PRICE GUIDE</p>
+      <h1>料金表</h1>
+      <p class="lead">ご利用の時間帯・サービスに応じた料金をご案内します。</p>
+    </header>
+
+    <section class="plans" aria-label="時間帯別料金">
+      <article class="plan day">
+        <div class="plan-header">
+          <p class="label">日中</p>
+          <h2>9:00〜23:00</h2>
+        </div>
+        <ul class="price-list">
+          <li><span class="duration">15分</span><span class="price free">無料</span></li>
+          <li><span class="duration">30分</span><span class="price">100円</span></li>
+        </ul>
+      </article>
+
+      <article class="plan night">
+        <div class="plan-header">
+          <p class="label">夜間</p>
+          <h2>23:00〜翌9:00</h2>
+        </div>
+        <ul class="price-list">
+          <li><span class="duration">15分</span><span class="price">300円</span></li>
+          <li><span class="duration">30分</span><span class="price">500円</span></li>
+        </ul>
+      </article>
+
+      <article class="plan video">
+        <div class="plan-header">
+          <p class="label">オンライン</p>
+          <h2>ビデオ通話</h2>
+        </div>
+        <ul class="price-list">
+          <li><span class="duration">30分</span><span class="price">500円</span></li>
+          <li><span class="duration">60分</span><span class="price">1,000円</span></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
