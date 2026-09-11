@@ -2,38 +2,31 @@ const menuButton = document.querySelector(".menu-button");
 const menu = document.querySelector(".nav");
 const menuLabel = menuButton?.querySelector(".sr-only");
 
-function closeMenu() {
+function setMenuOpen(open) {
   if (!menuButton || !menu) return;
-  menuButton.setAttribute("aria-expanded", "false");
-  menu.classList.remove("is-open");
-  document.body.classList.remove("menu-open");
-  if (menuLabel) menuLabel.textContent = "メニューを開く";
+  menuButton.setAttribute("aria-expanded", String(open));
+  menu.classList.toggle("is-open", open);
+  document.body.classList.toggle("menu-open", open);
+  if (menuLabel) menuLabel.textContent = open ? "メニューを閉じる" : "メニューを開く";
 }
 
 menuButton?.addEventListener("click", () => {
-  const willOpen = menuButton.getAttribute("aria-expanded") !== "true";
-  menuButton.setAttribute("aria-expanded", String(willOpen));
-  menu?.classList.toggle("is-open", willOpen);
-  document.body.classList.toggle("menu-open", willOpen);
-  if (menuLabel) menuLabel.textContent = willOpen ? "メニューを閉じる" : "メニューを開く";
+  setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
 });
-
 menu?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", closeMenu);
+  link.addEventListener("click", () => setMenuOpen(false));
 });
-
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuButton?.getAttribute("aria-expanded") === "true") {
+    setMenuOpen(false);
+    menuButton.focus();
+  }
+});
+document.addEventListener("click", (event) => {
+  if (menuButton && menu && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+    setMenuOpen(false);
+  }
+});
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 850) closeMenu();
-});
-
-const reviewToggle = document.querySelector(".review-toggle");
-const extraReviews = document.querySelectorAll(".review-extra");
-
-reviewToggle?.addEventListener("click", () => {
-  const willShow = reviewToggle.getAttribute("aria-expanded") !== "true";
-  reviewToggle.setAttribute("aria-expanded", String(willShow));
-  extraReviews.forEach((review) => {
-    review.hidden = !willShow;
-  });
-  reviewToggle.textContent = willShow ? "感想を閉じる" : "すべての感想を見る（5件）";
+  if (window.innerWidth > 850) setMenuOpen(false);
 });
