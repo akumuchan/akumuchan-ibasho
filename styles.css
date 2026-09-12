@@ -269,3 +269,32 @@ details[open] > summary .when-open { display: inline; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+.header-phone {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  border: 1px solid rgba(111, 87, 145, 0.22);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--accent, #765a9b);
+  box-shadow: 0 6px 18px rgba(77, 55, 103, 0.12);
+  font-size: 1.3rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.header-phone:hover {
+  transform: translateY(-1px);
+  background: #f7f2fc;
+  box-shadow: 0 8px 22px rgba(77, 55, 103, 0.17);
+}
+
+.header-phone:focus-visible {
+  outline: 3px solid rgba(118, 90, 155, 0.3);
+  outline-offset: 3px;
+}
+
