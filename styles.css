@@ -298,3 +298,25 @@ details[open] > summary .when-open { display: inline; }
   outline-offset: 3px;
 }
 
+
+
+/* 2026-09-21: editorial counseling-room refresh */
+:root { --content-max: 1180px; }
+body { background: #fff; }
+.site-header { min-height: 92px; padding-left: max(var(--gutter), calc((100vw - var(--content-max))/2)); padding-right: max(var(--gutter), calc((100vw - var(--content-max))/2)); }
+.hero { min-height: 650px; padding-left: max(var(--gutter), calc((100vw - var(--content-max))/2)); padding-right: max(var(--gutter), calc((100vw - var(--content-max))/2)); background: linear-gradient(110deg,#f8f5fb 0%,#f8f5fb 64%,#eee8f5 64%,#eee8f5 100%); }
+.hero h1 { max-width: 760px; font-size: clamp(2.35rem,4.5vw,4.4rem); line-height: 1.45; }
+.hero-invitation { max-width: 700px; }
+.section { padding-left: max(var(--gutter), calc((100vw - var(--content-max))/2)); padding-right: max(var(--gutter), calc((100vw - var(--content-max))/2)); }
+.section-heading .eyebrow { text-transform: uppercase; letter-spacing: .18em; }
+.about, .profile { gap: 96px; }
+.about .section-heading, .profile .section-heading { position: relative; }
+.about .section-heading::after, .profile .section-heading::after { content:""; display:block; width:54px; height:1px; margin-top:28px; background:#9d86b2; }
+.price-card, .review-card, .mail-form-card, .contact-options { border-radius: 0; box-shadow: none; }
+.service-pricing { gap: 0; border-top:1px solid var(--line); border-left:1px solid var(--line); }
+.price-card { border-top:0; border-left:0; }
+.contact-options { margin-left:max(var(--gutter),calc((100vw - var(--content-max))/2)); margin-right:max(var(--gutter),calc((100vw - var(--content-max))/2)); }
+#monthly-plan { background:#f8f5fb; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+#monthly-plan .notice { background:#fff; }
+.contact { padding-top:96px; padding-bottom:96px; }
+@media(max-width:850px){.site-header{min-height:72px}.hero{min-height:auto;background:#f8f5fb}.about,.profile{gap:32px}.about .section-heading::after,.profile .section-heading::after{margin-top:18px}.contact-options{margin-left:var(--gutter);margin-right:var(--gutter)}}
