@@ -332,3 +332,13 @@ body { background: #fff; }
   .hero-portrait img { width: 100%; height: auto; border-width: 5px; border-radius: 18px; }
   .hero-portrait figcaption { text-align:center; margin-top:14px; }
 }
+
+
+/* Photo-like hero portrait treatment */
+.hero-portrait { max-width: 560px; align-self: stretch; display:flex; flex-direction:column; justify-content:center; }
+.hero-portrait img { width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 28%; border-radius:0; border:0; box-shadow:none; }
+.hero-portrait figcaption { margin-top:14px; }
+@media(max-width:850px){
+ .hero-portrait{max-width:100%;width:100%;}
+ .hero-portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border-radius:0;border:0;}
+}
