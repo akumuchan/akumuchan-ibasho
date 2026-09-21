@@ -320,3 +320,15 @@ body { background: #fff; }
 #monthly-plan .notice { background:#fff; }
 .contact { padding-top:96px; padding-bottom:96px; }
 @media(max-width:850px){.site-header{min-height:72px}.hero{min-height:auto;background:#f8f5fb}.about,.profile{gap:32px}.about .section-heading::after,.profile .section-heading::after{margin-top:18px}.contact-options{margin-left:var(--gutter);margin-right:var(--gutter)}}
+
+
+/* Larger homepage portrait */
+.hero { grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); gap: 42px; }
+.hero-portrait { max-width: 500px; width: 100%; padding-top: 0; }
+.hero-portrait img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 22px; border: 8px solid #fff; box-shadow: 0 18px 45px rgba(77,55,103,.12); }
+@media (max-width:850px) {
+  .hero { grid-template-columns: minmax(0,1fr); }
+  .hero-portrait { max-width: 430px; margin: 0 auto; display: block; border-top: 0; padding-top: 10px; }
+  .hero-portrait img { width: 100%; height: auto; border-width: 5px; border-radius: 18px; }
+  .hero-portrait figcaption { text-align:center; margin-top:14px; }
+}
