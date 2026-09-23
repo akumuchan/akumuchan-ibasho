@@ -754,3 +754,12 @@ body { background: #fff; }
   .concerns-signoff { font-size: 1.05rem; }
   .concerns-signoff span { margin: 0 4px; }
 }
+
+/* Expandable profile story. */
+.profile-details { margin-top: 22px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.profile-details > summary { position: relative; padding: 19px 48px 19px 6px; color: var(--purple-dark); font-size: 1rem; font-weight: 600; list-style: none; }
+.profile-details > summary::-webkit-details-marker { display: none; }
+.profile-details > summary::after { content: "+"; position: absolute; right: 12px; top: 14px; font-size: 1.3rem; font-weight: 400; }
+.profile-details[open] > summary::after { content: "−"; }
+.profile-details-copy { padding-top: 6px; }
+.profile-details-copy > p { color: var(--muted); margin-bottom: 24px; }
