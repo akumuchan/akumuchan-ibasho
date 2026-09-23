@@ -73,6 +73,9 @@ h1 em { font-style: normal; color: var(--purple-dark); }
 .profile { padding-top: 88px; padding-bottom: 56px; }
 .profile-copy .profile-greeting { font: 1.375rem/1.8 var(--serif); color: var(--ink); }
 .profile-copy .profile-message { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--purple-dark); font-family: var(--serif); font-size: 1.125rem; }
+.profile-subheading { margin: 32px 0 12px; color: var(--ink); font-size: 1.125rem; line-height: 1.65; }
+.profile-books { margin-top: 16px; }
+.profile-copy .profile-scope { margin: 16px 0 0; font-size: .875rem; line-height: 1.8; }
 #about { padding-top: 48px; padding-bottom: 48px; }
 
 /* Keep every published rate visible; make the free introduction easy to find. */
