@@ -47,6 +47,8 @@ h1 em { font-style: normal; color: var(--purple-dark); }
 .hero-lead { max-width: 620px; color: var(--muted); }
 .hero-lead p { margin-bottom: 16px; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin-top: 28px; }
+.hero .hero-actions { flex-wrap: nowrap; gap: 12px; }
+.hero .hero-actions .button { flex: 1 1 0; width: auto; height: auto; min-width: 0; aspect-ratio: 1; padding: 10px; font-size: clamp(.65rem, 1.05vw, .9375rem); }
 .button { display: inline-flex; flex: 0 0 clamp(132px, 28vw, 160px); align-items: center; justify-content: center; width: clamp(132px, 28vw, 160px); height: clamp(132px, 28vw, 160px); min-height: 0; padding: 18px; border: 1px solid transparent; border-radius: 50%; font-size: .9375rem; font-weight: 600; line-height: 1.7; text-decoration: none; text-align: center; transition: background .16s ease; }
 .button-primary, .review-write-button { background: var(--purple-dark); color: white; }
 .button-primary:hover, .review-write-button:hover { background: #49355f; }
@@ -744,7 +746,7 @@ body { background: #fff; }
   .hero-subtitle { font-size: 1.28rem; }
   .hero-role { font-size: .98rem; }
   .hero-invitation { font-size: .94rem; }
-  .hero .hero-actions { width: 100%; max-width: 330px; }
+  .hero .hero-actions { width: 100%; max-width: none; }
   .reassurance { grid-template-columns: minmax(0,1fr); padding-inline: 20px; }
   .reassurance-item,.reassurance-item:nth-child(3) { min-height: 0; padding: 22px 18px; border: 0; border-bottom: 1px solid #d6cde3; }
   .reassurance-item:last-child { border-bottom: 0; }
