@@ -47,7 +47,7 @@ h1 em { font-style: normal; color: var(--purple-dark); }
 .hero-lead { max-width: 620px; color: var(--muted); }
 .hero-lead p { margin-bottom: 16px; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin-top: 28px; }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; max-width: 100%; padding: 13px 24px; border: 1px solid transparent; border-radius: 999px; font-size: .9375rem; font-weight: 600; line-height: 1.7; text-decoration: none; text-align: center; transition: background .16s ease; }
+.button { display: inline-flex; flex: 0 0 clamp(132px, 28vw, 160px); align-items: center; justify-content: center; width: clamp(132px, 28vw, 160px); height: clamp(132px, 28vw, 160px); min-height: 0; padding: 18px; border: 1px solid transparent; border-radius: 50%; font-size: .9375rem; font-weight: 600; line-height: 1.7; text-decoration: none; text-align: center; transition: background .16s ease; }
 .button-primary, .review-write-button { background: var(--purple-dark); color: white; }
 .button-primary:hover, .review-write-button:hover { background: #49355f; }
 .text-link { display: inline-block; font-size: .875rem; line-height: 1.8; padding: 8px 0; }
